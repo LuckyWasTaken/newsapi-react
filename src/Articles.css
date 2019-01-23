@@ -4,3 +4,10 @@
     display: flex;
     flex-flow: wrap;
 }
+
+@media screen and (max-width: 800px) {
+    .App-articles {
+        flex-flow: column;
+        padding: 0 10%;
+    }
+}
