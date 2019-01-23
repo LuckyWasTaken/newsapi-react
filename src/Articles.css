@@ -1,0 +1,6 @@
+.App-articles {
+    margin: 50px 0;
+    padding: 0 20px;
+    display: flex;
+    flex-flow: wrap;
+}

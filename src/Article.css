@@ -1,0 +1,32 @@
+.App-article {
+    display: flex;
+    padding: 5px;
+    width: 50%;
+    border: 1px solid black;
+}
+
+.App-article:nth-child(even) {
+    border-left: 0;
+}
+
+.App-article:nth-child(n+3) {
+    border-top: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.article__text {
+    width: 70%;
+}
+
+.article__pic-wrapper {
+    width: 30%;
+}
+
+.article__pic {
+        max-width: 300px;
+        width: 100%;
+}
