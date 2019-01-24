@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Article.css';
+import '../stylesheets/Article.css';
 
 class Article extends Component {
 
@@ -17,7 +17,7 @@ class Article extends Component {
         return (
             <div className="App-article">
                 <div className="article__text">
-                    <a target="_blank" href={this.props.article.url}><h5 className="article__title">{this.props.article.title}</h5></a>
+                    <a rel="noopener noreferrer" target="_blank" href={this.props.article.url}><h5 className="article__title">{this.props.article.title}</h5></a>
                     <p className="article__desc">{this.props.article.description}</p>
                     <p className="article__time">{this.parseDate(this.props.article.publishedAt)}</p>
                 </div>

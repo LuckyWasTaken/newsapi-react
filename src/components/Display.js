@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Display.css';
+import '../stylesheets/Display.css';
 import Search from './Search';
 import Articles from './Articles';
 import axios from 'axios';
