@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import '../stylesheets/Search.css';
 
+import { connect } from 'react-redux';
+import * as newsActions from '../actions/NewsActions';
+
 class Search extends Component {
 
-    constructor() {
+    constructor(props) {
         super()
         this.state = {
             query: ""
         }
+        this.dispatch = props.dispatch;
     }
 
     inputChange(e) {
@@ -19,6 +23,8 @@ class Search extends Component {
     search(e) {
         e.preventDefault();
         this.props.onSearch(this.state.query);
+
+        this.dispatch(newsActions.updateQuery(this.state.query));
     }
 
     render () {
@@ -32,5 +38,7 @@ class Search extends Component {
         )
     }
 }
+
+Search = connect()(Search);
 
 export default Search;

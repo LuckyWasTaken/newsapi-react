@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import '../stylesheets/Articles.css';
 import Article from './Article';
 
+import { connect } from 'react-redux';
+
+function mapStateToProps(store) {
+    console.log('mstp', store.default);
+    return store.default;
+}
+
 class Articles extends Component {
-    componentDidUpdate(){
-        console.log(this.props);
-    }
     render () {
         return (
             <div className="App-articles">
@@ -18,5 +22,7 @@ class Articles extends Component {
         )
     }
 }
+
+Articles = connect(mapStateToProps)(Articles);
 
 export default Articles;

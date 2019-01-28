@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import '../stylesheets/Display.css';
+
+
+import { connect } from 'react-redux';
+import * as newsActions from '../actions/NewsActions';
+
 import Search from './Search';
 import Articles from './Articles';
-import axios from 'axios';
 
 class Display extends Component {
-    constructor() {
+
+
+    constructor(props) {
         super()
         this.state = {
             articles: []
         }
+        this.dispatch = props.dispatch;
     }
 
     componentDidMount() {
@@ -26,9 +34,7 @@ class Display extends Component {
 
         axios.get(url)
         .then(function (response) {
-            that.setState({
-                articles: response.data.articles
-            })
+            that.dispatch(newsActions.setArticles(response.data.articles));
         })
         .catch(function (error) {
             console.log(error);
@@ -39,10 +45,12 @@ class Display extends Component {
         return (
             <div className="App-display">
                 <Search onSearch={this.search.bind(this)}/>
-                <Articles articles={this.state.articles}/>
+                <Articles/>
             </div>
         )
     }
 }
+
+Display = connect()(Display)
 
 export default Display;
