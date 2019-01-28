@@ -6,15 +6,6 @@ import Articles from './Articles';
 
 class Display extends Component {
 
-
-    constructor(props) {
-        super()
-        this.state = {
-            articles: []
-        }
-    }
-
-
     render () {
         return (
             <div className="App-display">
