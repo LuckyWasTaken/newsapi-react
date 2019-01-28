@@ -5,7 +5,6 @@ import Article from './Article';
 import { connect } from 'react-redux';
 
 function mapStateToProps(store) {
-    console.log('mstp', store.default);
     return store.default;
 }
 

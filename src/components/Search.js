@@ -19,10 +19,13 @@ class Search extends Component {
             query: e.target.value
         })
     }
+    
+    componentDidMount() {
+        this.dispatch(newsActions.updateQuery(""));
+    }
 
     search(e) {
         e.preventDefault();
-        this.props.onSearch(this.state.query);
 
         this.dispatch(newsActions.updateQuery(this.state.query));
     }

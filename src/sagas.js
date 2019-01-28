@@ -3,7 +3,7 @@ import * as api from './api';
 import * as newsActions from './constants/ActionTypes';
 
 function* setNews(action) {
-    const query = action.payload.query;
+    const query = action.query;
     console.log(query);
     const response = yield call(api.getNews, query);
 
