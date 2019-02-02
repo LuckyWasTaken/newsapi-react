@@ -18,7 +18,7 @@ class Article extends Component {
             <div className="App-article">
                 <div className="article__text">
                     <a rel="noopener noreferrer" target="_blank" href={this.props.article.url}><h5 className="article__title">{this.props.article.title}</h5></a>
-                    <p className="article__desc">{this.props.article.description}</p>
+                    <p className="article__desc">{this.props.article.description.split(' ').slice(0, 10).join(' ')}...</p>
                     <p className="article__time">{this.parseDate(this.props.article.publishedAt)}</p>
                 </div>
                 <div className="article__pic-wrapper">                
